@@ -1,11 +1,11 @@
 # Deploying a Netflix Clone on Kubernetes using DevSecOps methodology
 
-In this project we would be deploying Netflix Clone application on an EKS cluster using DevSecOps methodology. We would be making use of security tools like SonarQube, OWASP Dependency Check and Trivy.
-We would also be monitoring our EKS cluster using monitoring tools like Prometheus and Grafana. Most importantly we will be using ArgoCD for the Deployment.
+In this project we would be deploying Netflix Clone application on an AKS cluster using DevSecOps methodology. We would be making use of security tools like SonarQube, OWASP Dependency Check and Trivy.
+We would also be monitoring our AKS cluster using monitoring tools like Prometheus and Grafana. Most importantly we will be using ArgoCD for the Deployment.
 
-## Step 1: Launch an EC2 Instance and install Jenkins, SonarQube, Docker and Trivy
+## Step 1: Launch an VM Instance and install Jenkins, SonarQube, Docker and Trivy
 
-We would be making use of Terraform to launch the EC2 instance. We would be adding a script as userdata for the installation of Jenkins, SonarQube, Trivy and Docker. 
+We would be making use of Terraform to launch the VM instance. We would be adding a script as userdata for the installation of Jenkins, SonarQube, Trivy and Docker. 
 
 ## Step 2: Access Jenkins at port 8080 and install required plugins
 
@@ -123,11 +123,11 @@ pipeline {
 }
 ```
 
-## Step 7: Create an EKS Cluster using Terraform 
+## Step 7: Create an AKS Cluster using Terraform 
 
 Prerequisite: Install kubectl and helm before executing the commands below 
 
-## Step 8: Deploy Prometheus and Grafana on EKS 
+## Step 8: Deploy Prometheus and Grafana on AKS 
 
 In order to access the cluster use the command below:
 
@@ -171,7 +171,7 @@ kubectl edit svc stable-kube-prometheus-sta-prometheus -n prometheus
 kubectl edit svc stable-grafana -n prometheus
 ```
 
-## Step 9: Deploy ArgoCD on EKS to fetch the manifest files to the cluster
+## Step 9: Deploy ArgoCD on AKS to fetch the manifest files to the cluster
 
 1. Create a namespace argocd
 ```
